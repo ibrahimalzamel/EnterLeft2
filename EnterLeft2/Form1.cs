@@ -20,6 +20,7 @@ namespace EnterLeft2
         public Form1()
         {
             InitializeComponent();
+
         }
 
         //GetAll
@@ -31,7 +32,7 @@ namespace EnterLeft2
         //checkTextBoxs ; True  or false
         private bool checkTextBoxs()
         {
-            if (txtName.Text == "" || txtId.Text == "" || txtCatogeriId.Text == "" || txtUnitPrice.Text == "")
+            if (txtName.Text == ""|| txtCatogeriId.Text == "" || txtUnitPrice.Text == "")
             { return false; }
 
             else{return true;}
@@ -61,9 +62,9 @@ namespace EnterLeft2
                     }
                     var result = product1.Add(new Product
                     {
-                        ProductID = Convert.ToInt32(txtId.Text),
+                       
                         ProductName = txtName.Text,
-                        CategoryID = Convert.ToInt32(txtCatogeriId.Text),
+                        CategoryId = Convert.ToInt32(txtCatogeriId.Text),
                         UnitPrice = Convert.ToInt32(txtUnitPrice.Text),
                         Discontinued = checkDiscontinue
                     });
@@ -103,9 +104,9 @@ namespace EnterLeft2
                     }
                     var result = product1.Update(new Product
                     {
-                        ProductID = Convert.ToInt32(txtId.Text),
+                        Id = Convert.ToInt32(txtId.Text),
                         ProductName = txtName.Text,
-                        CategoryID = Convert.ToInt32(txtCatogeriId.Text),
+                        CategoryId = Convert.ToInt32(txtCatogeriId.Text),
                         UnitPrice = Convert.ToInt32(txtUnitPrice.Text),
                         Discontinued = chekDiscontinue
                     });
@@ -140,9 +141,9 @@ namespace EnterLeft2
                         }
                         var result = product1.Delete(new Product
                         {
-                            ProductID = Convert.ToInt32(txtId.Text),
+                            Id = Convert.ToInt32(txtId.Text),
                             ProductName = txtName.Text,
-                            CategoryID = Convert.ToInt32(txtCatogeriId.Text),
+                            CategoryId = Convert.ToInt32(txtCatogeriId.Text),
                             UnitPrice = Convert.ToInt32(txtUnitPrice.Text),
                             Discontinued = chekDiscontinue
                         });
@@ -171,7 +172,7 @@ namespace EnterLeft2
         // form load
         private void Form1_Load(object sender, EventArgs e)
         {
-            GetAllDataGirdview();
+           GetAllDataGirdview();
         }
         private void GetAllDataGirdview()
         {
@@ -181,8 +182,8 @@ namespace EnterLeft2
             foreach (var product in product1.GetAll().Data)
             {
                 n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[0].Value = product.ProductID;
-                dataGridView1.Rows[n].Cells[1].Value = product.CategoryID;
+                dataGridView1.Rows[n].Cells[0].Value = product.Id;
+                dataGridView1.Rows[n].Cells[1].Value = product.CategoryId;
                 dataGridView1.Rows[n].Cells[2].Value = product.ProductName;
                 dataGridView1.Rows[n].Cells[3].Value = product.UnitPrice;
                 dataGridView1.Rows[n].Cells[4].Value = product.Discontinued;

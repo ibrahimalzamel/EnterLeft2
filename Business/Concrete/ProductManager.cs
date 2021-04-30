@@ -57,12 +57,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAllByCategoryId(int Id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryID == Id), SuccessMessages.ProductListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == Id), SuccessMessages.ProductListed);
         }
 
         public IDataResult<Product> GetById(int productId)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductID == productId));
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == productId));
         }
 
         public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)

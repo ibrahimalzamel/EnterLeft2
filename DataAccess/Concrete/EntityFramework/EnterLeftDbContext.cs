@@ -16,15 +16,12 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(@"Server=sql11.freemysqlhosting.net;
-                                      Port=3306;
-                                      Database=sql11400705;
-                                      Uid=sql11400705;
-                                      Pwd=zVsKNdY7tb;");
-        } 
-    
-        public DbSet<Product> Product { get; set; }
-        public DbSet<Category> Categories { get; set; }
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=EnterLeft;Trusted_Connection=true");
+        }
+
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categorioes { get; set; }
     }
 }
   

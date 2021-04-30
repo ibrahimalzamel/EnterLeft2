@@ -32,7 +32,6 @@ namespace EnterLeft2
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtCatogeriId = new System.Windows.Forms.TextBox();
@@ -91,16 +90,6 @@ namespace EnterLeft2
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtId.ForeColor = System.Drawing.Color.Black;
-            this.txtId.Location = new System.Drawing.Point(146, 62);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(203, 30);
-            this.txtId.TabIndex = 4;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // txtName
             // 
@@ -302,7 +291,6 @@ namespace EnterLeft2
             this.Controls.Add(this.txtCatogeriId);
             this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -321,7 +309,6 @@ namespace EnterLeft2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtCatogeriId;

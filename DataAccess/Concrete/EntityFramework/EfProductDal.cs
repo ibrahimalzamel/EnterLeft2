@@ -16,11 +16,11 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using(EnterLeftDbContext context = new EnterLeftDbContext())
             {
-                var result = from p in context.Product
-                             join c in context.Categories on p.CategoryID equals c.CategoryID
+                var result = from p in context.Products
+                             join c in context.Categorioes on p.CategoryId equals c.CategoryId
                              select new ProductDetailDto
                              { 
-                                 ProductID = p.ProductID,
+                                 ProductID = p.Id,
                                  ProductName= p.ProductName,
                                  CategoryName =c.CategoryName
                              };
