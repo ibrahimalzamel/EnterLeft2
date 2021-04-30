@@ -160,7 +160,6 @@ namespace EnterLeft2
             if (e.RowIndex>=0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                txtId.Text = row.Cells["ProductID"].Value.ToString();
                 txtCatogeriId.Text = row.Cells["CateGoryID"].Value.ToString();
                 txtName.Text = row.Cells["ProductName"].Value.ToString();
                 txtUnitPrice.Text = row.Cells["UnitPrice"].Value.ToString();
@@ -215,14 +214,7 @@ namespace EnterLeft2
 
         }
 
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtId.Text, "[^0-9]") || System.Text.RegularExpressions.Regex.IsMatch(txtId.Text, ","))
-            {
-                MessageBox.Show("Lütfen yalnızca rakam girin.");
-                txtId.Text = txtId.Text.Remove(txtId.Text.Length - 1);
-            }
-        }
+     
 
         private void txtCatogeriId_TextChanged(object sender, EventArgs e)
         {
